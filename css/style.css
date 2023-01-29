@@ -46,17 +46,25 @@ main{
     transition: all cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 .add{
-    background-color: #6EA94A;
+    background: url(../images/icon_add.svg);
+    background-position: center;
     border: 2px solid #97D272;
 }
 .remove{
-    background-color: #A94A4A;
+    background: url(../images/icon_remove.svg);
+    background-position: center;
     border: 2px solid #D28383;
 }
 .change{
-    background-color: #4A87A9;
-    border: 2px solid #72AECF;
+    background: url(../images/icon_change.svg);
+    background-position: center;
+    border: 2px solid #3F3F3F;
     
+}
+.theme{
+    background: url(../images/icon_dark.svg);
+    background-position: center;
+    border: 2px solid #3F3F3F;
 }
 .theme-light{
     background-color: var(--preto);

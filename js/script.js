@@ -88,3 +88,11 @@ function carregaNotasSalvas(){
     }
 }
 carregaNotasSalvas();
+
+function mudaTema(){
+    
+}
+
+function mudaCor(){
+
+}
