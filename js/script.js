@@ -74,6 +74,8 @@ function carregaNotasSalvas(){
     let titulos = '';
     let descricoes = '';
     let cores = '';
+    let btnTema = document.querySelector('.theme');
+
     if(window.localStorage.key('titulo')){
         titulos = window.localStorage.getItem('titulo').split(',');
         descricoes = window.localStorage.getItem('descricao').split(',');
@@ -86,12 +88,46 @@ function carregaNotasSalvas(){
         let nota = `<div class="note"><div class="head"><p>${titulos[i]}</p></div><div class="body"><div class="body-conteudo"><div class="nota-info"> <div class="ck-finalizado"><input type="checkbox" name="finalizado" id="finalizado"><label for="finalizado">Finalizado</label></div><div class="nota-data"><span>00/00/0000</span></div></div><p>${descricoes[i]}</p></div></div></div>`;
         espacoNota.innerHTML += nota;
     }
+    if(window.localStorage.key('Tema-modo')){
+        let btnTema = document.querySelector('.theme');
+        document.body.classList = window.localStorage.getItem('Tema-modo');
+        btnTema.style.background = window.localStorage.getItem('Tema-img');
+        btnTema.style.backgroundPosition = 'center';
+
+    }
+
 }
 carregaNotasSalvas();
 
-function mudaTema(){
+let btnTema = document.querySelector('.theme');
+let mudouTema = false;
+
+btnTema.addEventListener('click', () => {
+    if(window.localStorage.key('Tema-mudouTema')){
+        mudouTema = 'true' == window.localStorage.getItem('Tema-mudouTema') ? true : false;
+    }
+    mudouTema = !mudouTema;
+    document.body.classList.toggle('dark-theme');
+
+    if(mudouTema == true){
+        btnTema.style.background = '#FFFFFF url(../images/icon_light.svg)';
+        window.localStorage.setItem('Tema-modo', 'light-theme dark-theme');
+        window.localStorage.setItem('Tema-img', '#FFFFFF url(../images/icon_light.svg)');
+        window.localStorage.setItem('Tema-mudouTema', mudouTema);
+        
+    } else{
+        
+        btnTema.style.background = '#000000 url(../images/icon_dark.svg)';
+        window.localStorage.setItem('Tema-modo', 'light-theme');
+        window.localStorage.setItem('Tema-img','#000000 url(../images/icon_dark.svg)');
+        window.localStorage.setItem('Tema-mudouTema', mudouTema);
+        
+    }
+    btnTema.style.backgroundPosition = 'center';
+
+
     
-}
+})
 
 function mudaCor(){
 
