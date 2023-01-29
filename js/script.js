@@ -77,19 +77,17 @@ function carregaNotasSalvas(){
     let btnTema = document.querySelector('.theme');
 
     if(window.localStorage.key('titulo')){
-        titulos = window.localStorage.getItem('titulo').split(',');
-        descricoes = window.localStorage.getItem('descricao').split(',');
-        cores = window.localStorage.getItem('cor').split(',');
+        titulos = window.localStorage.getItem('titulo').split(',') || '';
+        descricoes = window.localStorage.getItem('descricao').split(',') || '';
+        cores = window.localStorage.getItem('cor').split(',') || '';
+        for(let i = 0; i < titulos.length; i++){
+            let nota = `<div class="note"><div class="head"><p>${titulos[i]}</p></div><div class="body"><div class="body-conteudo"><div class="nota-info"> <div class="ck-finalizado"><input type="checkbox" name="finalizado" id="finalizado"><label for="finalizado">Finalizado</label></div><div class="nota-data"><span>00/00/0000</span></div></div><p>${descricoes[i]}</p></div></div></div>`;
+            espacoNota.innerHTML += nota;
+        }
     }
 
     let espacoNota = document.querySelector('.principal');
-
-    for(let i = 0; i< titulos.length; i++){
-        let nota = `<div class="note"><div class="head"><p>${titulos[i]}</p></div><div class="body"><div class="body-conteudo"><div class="nota-info"> <div class="ck-finalizado"><input type="checkbox" name="finalizado" id="finalizado"><label for="finalizado">Finalizado</label></div><div class="nota-data"><span>00/00/0000</span></div></div><p>${descricoes[i]}</p></div></div></div>`;
-        espacoNota.innerHTML += nota;
-    }
     if(window.localStorage.key('Tema-modo')){
-        let btnTema = document.querySelector('.theme');
         document.body.classList = window.localStorage.getItem('Tema-modo');
         btnTema.style.background = window.localStorage.getItem('Tema-img');
         btnTema.style.backgroundPosition = 'center';
