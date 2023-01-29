@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Remind it</title>
+</head>
+<body class="dark-theme">
+    <main>
+        <header>
+            <p>Remind It</p>
+        </header>
+        <section class="area-principal">
+            <section class="barra-lateral">
+                <button class="botao add"></button>
+                <button class="botao remove"></button>
+                <button class="botao change"></button>
+                <button class="botao theme-light"></button>
+            </section>
+            <section class="barra-principal">
+                <section class="principal">
+                    <!--<div class="note">
+                        <div class="head">
+                        </div>
+                        <div class="body">
+                            <div class="body-conteudo">
+                                <div class="nota-info">
+                                    <div class="ck-finalizado">
+                                        <input type="checkbox" name="finalizado" id="finalizado">
+                                        <label for="finalizado">Finalizado</label>
+                                    </div>
+                                    <div class="nota-data">
+                                        <span>00/00/0000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                </section>
+            </section>
+        </section>
+        <article class="zona-add">
+            <section class="area-adicionar">
+                <section>
+                    <div class="area-adicionar-titulo">
+                        <h1>Título</h1>
+                        <input type="text" id="txt-title" maxlength="40" autocomplete="off">
+                    </div>
+                    <div class="area-adicionar-descricao">
+                        <h1>Descrição</h1>
+                        <textarea name="" class="" id="txt-desc"></textarea>
+                    </div>
+                </section>
+                <section class="seletor-cores">
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </section>
+            </section>
+            <div class="btn-criar">
+                <button onclick="adicionaNota()">Criar</button>
+            </div>
+        </article>
+    </main>
+    <script src="/js/script.js"></script>
+</body>
+</html>
