@@ -34,6 +34,58 @@ main{
     flex-wrap: wrap;
 
 }
+.barra-lateral-suspensa{
+    position: fixed;
+    left: 105px;
+    top: calc(50% - 90px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 45px;
+    border: 1px solid #73898E;
+    width: 75px;
+    height: 180px;
+    background-color: var(--bg-highlight);
+    display: none;
+
+}
+.barra-lateral-suspensa div{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.cor-item{
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    background-color: red;
+    cursor: pointer;
+}
+.cor-item:nth-child(1){
+    background-color: var(--ciano);
+}
+.cor-item:nth-child(2){
+    background-color: var(--azul-escuro);
+}
+.cor-item:nth-child(3){
+    background-color: var(--roxo);
+}
+.cor-item:nth-child(4){
+    background-color: var(--rosa-escuro);
+}
+.cor-item:nth-child(5){
+    background-color: var(--rosa);
+}
+.cor-item:nth-child(6){
+    background-color: var(--vermelho);
+}
+.cor-item:nth-child(7){
+    background-color: var(--amarelo);
+}
+.cor-item:nth-child(8){
+    background-color: var(--verde);
+}
 .botao{
     width: 50px;
     height: 50px;
@@ -48,23 +100,23 @@ main{
 .add{
     background: url(../images/icon_add.svg);
     background-position: center;
-    border: 2px solid #97D272;
+    border: 1px solid #97D272;
 }
 .remove{
     background: url(../images/icon_remove.svg);
     background-position: center;
-    border: 2px solid #D28383;
+    border: 1px solid #D28383;
 }
 .change{
     background: url(../images/icon_change.svg);
     background-position: center;
-    border: 2px solid #3F3F3F;
+    border: 1px solid #3F3F3F;
     
 }
 .theme{
-    background: #000000 url(../images/icon_dark.svg);
+    
     background-position: center;
-    border: 2px solid #3F3F3F;
+    border: 1px solid #3F3F3F;
 }
 .theme-light{
     background-color: var(--preto);
