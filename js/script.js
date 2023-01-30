@@ -75,7 +75,8 @@ function carregaNotasSalvas(){
     let descricoes = '';
     let cores = '';
     let btnTema = document.querySelector('.theme');
-
+    let espacoNota = document.querySelector('.principal');
+    
     if(window.localStorage.key('titulo')){
         titulos = window.localStorage.getItem('titulo').split(',') || '';
         descricoes = window.localStorage.getItem('descricao').split(',') || '';
@@ -86,7 +87,6 @@ function carregaNotasSalvas(){
         }
     }
 
-    let espacoNota = document.querySelector('.principal');
     if(window.localStorage.key('Tema-modo')){
         document.body.classList = window.localStorage.getItem('Tema-modo');
         btnTema.style.background = window.localStorage.getItem('Tema-img');
