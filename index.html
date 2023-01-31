@@ -8,29 +8,29 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Remind it</title>
 </head>
-<body class="light-theme">
+<body class="light-theme" onload="carregaNotas()">
     <main>
         <header>
             <p>Remind It</p>
         </header>
         <section class="area-principal">
             <section class="barra-lateral">
-                <div class="botao add"></div>
-                <div class="botao remove"></div>
-                <div class="botao change"></div>
-                <div class="botao theme"></div>
+                <div class="botao add" onclick="fadeIn()"></div>
+                <div class="botao remove" onclick="limpaNotas()"></div>
+                <div class="botao change" onclick="ativaSelecaoCor()"></div>
+                <div class="botao theme" onclick="mudaTema()"></div>
             </section>
 
             <section class="barra-lateral-suspensa">
                 <div>
-                    <div class="cor-item ciano"></div>
-                    <div class="cor-item azul-escuro"></div>
-                    <div class="cor-item roxo"></div>
-                    <div class="cor-item rosa-escuro"></div>
-                    <div class="cor-item rosa"></div>
-                    <div class="cor-item vermelho"></div>
-                    <div class="cor-item amarelo"></div>
-                    <div class="cor-item verde"></div>
+                    <div class="cor-item ciano" onclick="ativaCiano()"></div>
+                    <div class="cor-item azul-escuro" onclick="ativaAzulEscuro()"></div>
+                    <div class="cor-item roxo" onclick="ativaRoxo()"></div>
+                    <div class="cor-item rosa-escuro" onclick="ativaRosaEscuro()"></div>
+                    <div class="cor-item rosa" onclick="ativaRosa()"></div>
+                    <div class="cor-item vermelho" onclick="ativaVermelho()"></div>
+                    <div class="cor-item amarelo" onclick="ativaAmarelo()"></div>
+                    <div class="cor-item verde" onclick="ativaVerde()"></div>
                 </div>
             </section>
 
