@@ -18,6 +18,7 @@ main{
     height: fit-content;
 }
 .barra-lateral{
+    z-index: 1;
     padding: 12px 0;
     width: 75px;
     height: 278px;
@@ -35,6 +36,7 @@ main{
 
 }
 .barra-lateral-suspensa{
+    z-index: 1;
     position: fixed;
     left: 105px;
     top: calc(50% - 90px);
@@ -138,7 +140,6 @@ main{
 .principal{
     width: 1197px;
     height: fit-content;
-    /*border: 1px solid red;*/
     display: flex;
     justify-content: left;
     gap: 25px;
@@ -354,6 +355,38 @@ main{
 .dark-theme{
     --bg: var(--fundo-escuro);
     --bg-highlight:var(--fundo-escuro-highlight);
+}
+
+@media (max-width:900px) {
+    .principal{
+        justify-content: center;
+        margin-bottom: 135px;
+    }
+    .barra-lateral{
+        width: 100%;
+        height: 46px;
+        justify-content: space-evenly;
+        top: auto;
+        left: 0;
+        bottom: 0;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .barra-lateral-suspensa{
+        width: 100%;
+        top: auto;
+        left: 0;
+        bottom: 70px;
+        height: 40px;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+
+    }
+    .barra-lateral-suspensa div{
+        gap: 15px;
+    }
 }
 
 :root{

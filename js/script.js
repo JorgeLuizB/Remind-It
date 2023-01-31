@@ -39,15 +39,16 @@ function adicionaNota(){
         //falta implementar data
         let dataTemporaria = new Date();
         let data = dataTemporaria.getDate() < 10 ? '0' + dataTemporaria.getDay() : dataTemporaria.getDate();
-        data += (dataTemporaria.getMonth() + 1) < 10 ? '0' + (dataTemporaria.getMonth() + 1) : dataTemporaria.getMonth() + 1;
-        data += dataTemporaria.getFullYear().toString();
-
-        notas.push({'titulo': titulo.value, 'descricao': descricao.value});
+        data += (dataTemporaria.getMonth() + 1) < 10 ? '/0' + (dataTemporaria.getMonth() + 1) : dataTemporaria.getMonth() + 1;
+        data += '/' + dataTemporaria.getFullYear().toString();
+        console.log(data);
+        notas.push({'titulo': titulo.value, 'descricao': descricao.value, 'dia': data});
         localStorage.setItem('notas', JSON.stringify(notas));
         
-        let nota = `<div class="note"><div class="head"><p>${titulo.value}</p></div><div class="body"><div class="body-conteudo"><div class="nota-info"><div class="ck-finalizado"><input type="checkbox" name="finalizado" id="finalizado"><label for="finalizado">Finalizado</label></div><div class="nota-data"><span>00/00/0000</span></div></div><p>${descricao.value}</p></div></div></div>`;
+        let nota = `<div class="note"><div class="head"><p>${titulo.value}</p></div><div class="body"><div class="body-conteudo"><div class="nota-info"><div class="ck-finalizado"><input type="checkbox" name="finalizado" id="finalizado"><label for="finalizado">Finalizado</label></div><div class="nota-data"><span>${data}</span></div></div><p>${descricao.value}</p></div></div></div>`;
 
         espacoNota.innerHTML += nota;
+
         if(localStorage.hasOwnProperty('cor')){
             let cor = localStorage.getItem('cor');
             document.querySelector('header').style.backgroundColor = `var(--${cor})`;
@@ -70,7 +71,7 @@ function carregaNotas(){
         let notas = []
         notas = JSON.parse(localStorage.getItem('notas'));
         for(let i = 0; i < notas.length; i++){
-            let nota = `<div class="note"><div class="head"><p>${notas[i]['titulo']}</p></div><div class="body"><div class="body-conteudo"><div class="nota-info"> <div class="ck-finalizado"><input type="checkbox" name="finalizado" id="finalizado"><label for="finalizado">Finalizado</label></div><div class="nota-data"><span>00/00/0000</span></div></div><p>${notas[i]['descricao']}</p></div></div></div>`;
+            let nota = `<div class="note"><div class="head"><p>${notas[i]['titulo']}</p></div><div class="body"><div class="body-conteudo"><div class="nota-info"> <div class="ck-finalizado"><input type="checkbox" name="finalizado" id="finalizado"><label for="finalizado">Finalizado</label></div><div class="nota-data"><span>${notas[i]['dia']}</span></div></div><p>${notas[i]['descricao']}</p></div></div></div>`;
 
             espacoNota.innerHTML += nota;
         }
@@ -82,7 +83,7 @@ function carregaNotas(){
         btnTema.style.backgroundPosition = 'center';
 
     } else{
-        btnTema.style.background = '#000000 url(../images/icon_dark.svg)';
+        btnTema.style.background = '#000000 url(./images/icon_dark.svg)';
         btnTema.style.backgroundPosition = 'center';
     }
     carregaCor();
@@ -144,64 +145,32 @@ function ativaSelecaoCor(){
 function ativaCiano() {
     localStorage.setItem('cor','ciano');
     carregaCor();
-    /*document.querySelector('header').style.backgroundColor = 'var(--ciano)';
-    document.querySelectorAll('.head').forEach(element => {element.style.backgroundColor = 'var(--ciano)'; });
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--ciano)'; element.style.boxShadow = '0 0 4px var(--ciano)';});
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--ciano)'; });*/ 
 };
 function ativaAzulEscuro() {
     localStorage.setItem('cor','azul-escuro');
     carregaCor();
-    /*document.querySelector('header').style.backgroundColor = 'var(--azul-escuro)'; 
-    document.querySelectorAll('.head').forEach(element => {element.style.backgroundColor = 'var(--azul-escuro)'; });
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--azul-escuro)'; element.style.boxShadow = '0 0 4px var(--azul-escuro)';});
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--azul-escuro)'; });*/
 };
 function ativaRoxo() {
     localStorage.setItem('cor','roxo');
     carregaCor();
-   /* document.querySelector('header').style.backgroundColor = 'var(--roxo)'; 
-    document.querySelectorAll('.head').forEach(element => {element.style.backgroundColor = 'var(--roxo)'; });
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--roxo)'; element.style.boxShadow = '0 0 4px var(--roxo)';});
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--roxo)'; });*/
 };
 function ativaRosaEscuro() {
     localStorage.setItem('cor','rosa-escuro');
     carregaCor();
-    /*document.querySelector('header').style.backgroundColor = 'var(--rosa-escuro)'; 
-    document.querySelectorAll('.head').forEach(element => {element.style.backgroundColor = 'var(--rosa-escuro)'; });
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--rosa-escuro)'; element.style.boxShadow = '0 0 4px var(--rosa-escuro)';});
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--rosa-escuro)'; });*/
 };
 function ativaRosa() {
     localStorage.setItem('cor','rosa');
     carregaCor();
-    /*document.querySelector('header').style.backgroundColor = 'var(--rosa)'; 
-    document.querySelectorAll('.head').forEach(element => {element.style.backgroundColor = 'var(--rosa)'; });
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--rosa)'; element.style.boxShadow = '0 0 4px var(--rosa)';});
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--rosa)'; });*/
 };
 function ativaVermelho() {
     localStorage.setItem('cor','vermelho');
     carregaCor();
-    /*document.querySelector('header').style.backgroundColor = 'var(--vermelho)'; 
-    document.querySelectorAll('.head').forEach(element => {element.style.backgroundColor = 'var(--vermelho)'; });
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--vermelho)'; element.style.boxShadow = '0 0 4px var(--vermelho)';});
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--vermelho)'; });*/
 };
 function ativaAmarelo() {
     localStorage.setItem('cor','amarelo');
     carregaCor();
-    /*document.querySelector('header').style.backgroundColor = 'var(--amarelo)'; 
-    document.querySelectorAll('.head').forEach(element => {element.style.backgroundColor = 'var(--amarelo)'; });
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--amarelo)'; element.style.boxShadow = '0 0 4px var(--amarelo)';});
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--amarelo)'; });*/
 };
 function ativaVerde() {
     localStorage.setItem('cor','verde');
     carregaCor();
-    /*document.querySelector('header').style.backgroundColor = 'var(--verde)'; 
-    document.querySelectorAll('.head').forEach(element => {element.style.backgroundColor = 'var(--verde)'; });
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--verde)'; element.style.boxShadow = '0 0 4px var(--verde)';});
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--verde)'; });*/
 };
