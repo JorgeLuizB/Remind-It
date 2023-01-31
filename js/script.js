@@ -85,6 +85,10 @@ function carregaNotas(){
         btnTema.style.background = '#000000 url(../images/icon_dark.svg)';
         btnTema.style.backgroundPosition = 'center';
     }
+    carregaCor();
+}
+
+function carregaCor(){
     if(localStorage.hasOwnProperty('cor')){
         let cor = localStorage.getItem('cor');
         document.querySelector('header').style.backgroundColor = `var(--${cor})`;
@@ -92,7 +96,11 @@ function carregaNotas(){
         document.querySelectorAll('.note').forEach(element => {element.style.borderColor = `var(--${cor})`; element.style.boxShadow = `0 0 4px var(--${cor})`;});
         document.querySelectorAll('.note').forEach(element => {element.style.borderColor = `var(--${cor})`; }); 
     } else{
-        ativaCiano();
+        
+        document.querySelector('header').style.backgroundColor = `var(--ciano)`;
+        document.querySelectorAll('.head').forEach(element => {element.style.backgroundColor = `var(--ciano)`; });
+        document.querySelectorAll('.note').forEach(element => {element.style.borderColor = `var(--ciano)`; element.style.boxShadow = `0 0 4px var(--ciano)`;});
+        document.querySelectorAll('.note').forEach(element => {element.style.borderColor = `var(--ciano)`; }); 
     }
 }
 
@@ -106,16 +114,16 @@ function mudaTema() {
     document.body.classList.toggle('dark-theme');
 
     if(mudouTema == true){
-        btnTema.style.background = '#FFFFFF url(../images/icon_light.svg)';
+        btnTema.style.background = '#FFFFFF url(./images/icon_light.svg)';
         localStorage.setItem('Tema-modo', 'light-theme dark-theme');
-        localStorage.setItem('Tema-img', '#FFFFFF url(../images/icon_light.svg)');
+        localStorage.setItem('Tema-img', '#FFFFFF url(./images/icon_light.svg)');
         localStorage.setItem('Tema-mudouTema', mudouTema);
         
     } else{
         
-        btnTema.style.background = '#000000 url(../images/icon_dark.svg)';
+        btnTema.style.background = '#000000 url(./images/icon_dark.svg)';
         localStorage.setItem('Tema-modo', 'light-theme');
-        localStorage.setItem('Tema-img','#000000 url(../images/icon_dark.svg)');
+        localStorage.setItem('Tema-img','#000000 url(./images/icon_dark.svg)');
         localStorage.setItem('Tema-mudouTema', mudouTema);
         
     }
@@ -135,57 +143,65 @@ function ativaSelecaoCor(){
 }
 function ativaCiano() {
     localStorage.setItem('cor','ciano');
-    document.querySelector('header').style.backgroundColor = 'var(--ciano)';
+    carregaCor();
+    /*document.querySelector('header').style.backgroundColor = 'var(--ciano)';
     document.querySelectorAll('.head').forEach(element => {element.style.backgroundColor = 'var(--ciano)'; });
     document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--ciano)'; element.style.boxShadow = '0 0 4px var(--ciano)';});
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--ciano)'; }); 
+    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--ciano)'; });*/ 
 };
 function ativaAzulEscuro() {
     localStorage.setItem('cor','azul-escuro');
-    document.querySelector('header').style.backgroundColor = 'var(--azul-escuro)'; 
+    carregaCor();
+    /*document.querySelector('header').style.backgroundColor = 'var(--azul-escuro)'; 
     document.querySelectorAll('.head').forEach(element => {element.style.backgroundColor = 'var(--azul-escuro)'; });
     document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--azul-escuro)'; element.style.boxShadow = '0 0 4px var(--azul-escuro)';});
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--azul-escuro)'; });
+    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--azul-escuro)'; });*/
 };
 function ativaRoxo() {
     localStorage.setItem('cor','roxo');
-    document.querySelector('header').style.backgroundColor = 'var(--roxo)'; 
+    carregaCor();
+   /* document.querySelector('header').style.backgroundColor = 'var(--roxo)'; 
     document.querySelectorAll('.head').forEach(element => {element.style.backgroundColor = 'var(--roxo)'; });
     document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--roxo)'; element.style.boxShadow = '0 0 4px var(--roxo)';});
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--roxo)'; });
+    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--roxo)'; });*/
 };
 function ativaRosaEscuro() {
     localStorage.setItem('cor','rosa-escuro');
-    document.querySelector('header').style.backgroundColor = 'var(--rosa-escuro)'; 
+    carregaCor();
+    /*document.querySelector('header').style.backgroundColor = 'var(--rosa-escuro)'; 
     document.querySelectorAll('.head').forEach(element => {element.style.backgroundColor = 'var(--rosa-escuro)'; });
     document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--rosa-escuro)'; element.style.boxShadow = '0 0 4px var(--rosa-escuro)';});
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--rosa-escuro)'; });
+    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--rosa-escuro)'; });*/
 };
 function ativaRosa() {
     localStorage.setItem('cor','rosa');
-    document.querySelector('header').style.backgroundColor = 'var(--rosa)'; 
+    carregaCor();
+    /*document.querySelector('header').style.backgroundColor = 'var(--rosa)'; 
     document.querySelectorAll('.head').forEach(element => {element.style.backgroundColor = 'var(--rosa)'; });
     document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--rosa)'; element.style.boxShadow = '0 0 4px var(--rosa)';});
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--rosa)'; });
+    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--rosa)'; });*/
 };
 function ativaVermelho() {
     localStorage.setItem('cor','vermelho');
-    document.querySelector('header').style.backgroundColor = 'var(--vermelho)'; 
+    carregaCor();
+    /*document.querySelector('header').style.backgroundColor = 'var(--vermelho)'; 
     document.querySelectorAll('.head').forEach(element => {element.style.backgroundColor = 'var(--vermelho)'; });
     document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--vermelho)'; element.style.boxShadow = '0 0 4px var(--vermelho)';});
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--vermelho)'; });
+    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--vermelho)'; });*/
 };
 function ativaAmarelo() {
     localStorage.setItem('cor','amarelo');
-    document.querySelector('header').style.backgroundColor = 'var(--amarelo)'; 
+    carregaCor();
+    /*document.querySelector('header').style.backgroundColor = 'var(--amarelo)'; 
     document.querySelectorAll('.head').forEach(element => {element.style.backgroundColor = 'var(--amarelo)'; });
     document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--amarelo)'; element.style.boxShadow = '0 0 4px var(--amarelo)';});
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--amarelo)'; });
+    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--amarelo)'; });*/
 };
 function ativaVerde() {
     localStorage.setItem('cor','verde');
-    document.querySelector('header').style.backgroundColor = 'var(--verde)'; 
+    carregaCor();
+    /*document.querySelector('header').style.backgroundColor = 'var(--verde)'; 
     document.querySelectorAll('.head').forEach(element => {element.style.backgroundColor = 'var(--verde)'; });
     document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--verde)'; element.style.boxShadow = '0 0 4px var(--verde)';});
-    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--verde)'; });
+    document.querySelectorAll('.note').forEach(element => {element.style.borderColor = 'var(--verde)'; });*/
 };
