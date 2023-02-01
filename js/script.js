@@ -100,6 +100,10 @@ function carregaCor(){
         document.querySelector('.btn-criar button').addEventListener('mouseleave', ()=>{document.querySelector('.btn-criar button').style.color = `var(--${cor})`});
         document.querySelector('.btn-criar button').addEventListener('mouseenter', ()=>{document.querySelector('.btn-criar button').style.backgroundColor = `var(--${cor})`});
         document.querySelector('.btn-criar button').addEventListener('mouseleave', ()=>{document.querySelector('.btn-criar button').style.backgroundColor = `var(--bg-highlight)`});
+        document.querySelector('.btn-criar div').addEventListener('mouseenter',()=>{document.querySelector('.btn-criar div').style.backgroundColor = `var(--${cor})`});
+        document.querySelector('.btn-criar div').addEventListener('mouseleave',()=>{document.querySelector('.btn-criar div').style.backgroundColor = `var(--bg-highlight)`});
+        document.querySelector('.btn-criar div').addEventListener('mouseenter',()=>{document.querySelector('.btn-criar div').style.backgroundImage = 'url(./images/close-hover.svg)'});
+        document.querySelector('.btn-criar div').addEventListener('mouseleave',()=>{document.querySelector('.btn-criar div').style.backgroundImage = 'url(./images/close.svg)'});
     } else{
         
         document.querySelector('header').style.backgroundColor = `var(--ciano)`;
@@ -109,6 +113,11 @@ function carregaCor(){
         document.querySelector('.btn-criar button').style.color =  `var(--ciano)`;
         document.querySelector('.btn-criar button').addEventListener('mouseenter', ()=>{document.querySelector('.btn-criar button').style.color = `var(--bg-highlight)`});
         document.querySelector('.btn-criar button').addEventListener('mouseleave', ()=>{document.querySelector('.btn-criar button').style.color = `var(--ciano)`});
+
+        document.querySelector('.btn-criar div').addEventListener('mouseenter',()=>{document.querySelector('.btn-criar div').style.backgroundColor = `var(--ciano)`});
+        document.querySelector('.btn-criar div').addEventListener('mouseleave',()=>{document.querySelector('.btn-criar div').style.backgroundColor = `var(--bg-highlight)`});
+        document.querySelector('.btn-criar div').addEventListener('mouseenter',()=>{document.querySelector('.btn-criar div').style.backgroundImage = 'url(./images/close-hover.svg)'});
+        document.querySelector('.btn-criar div').addEventListener('mouseleave',()=>{document.querySelector('.btn-criar div').style.backgroundImage = 'url(./images/close.svg)'});
         
     }
 }
@@ -138,6 +147,9 @@ function mudaTema() {
     }
     btnTema.style.backgroundPosition = 'center';
 
+}
+function fecha(){
+    fadeOut();
 }
 
 function ativaSelecaoCor(){

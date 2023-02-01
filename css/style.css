@@ -28,7 +28,7 @@ main{
     align-content: center;
     gap: 15px;
     background-color: var(--bg-highlight);
-    box-shadow: 0 0 10px #00000080;
+    /*box-shadow: 0 0 10px #00000080;*/
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -322,6 +322,19 @@ main{
     background-color: var(--ciano);
     color: var(--preto);
 }
+.btn-criar div{
+    cursor: pointer;
+    width: 75px;
+    height: 75px;
+    margin-right: 25px;
+    
+    background-image: url(../images/close.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 40px;
+    background-color: var(--bg-highlight);
+    
+}
 
 @keyframes anim-in {
     from{
@@ -404,7 +417,7 @@ main{
         margin-top: 0;
     }
     .btn-criar button{
-        width: 75%;
+        width: 65%;
     }
 }
 
