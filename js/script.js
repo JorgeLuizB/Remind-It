@@ -9,7 +9,7 @@ function limpaNotas(){
     espacoNota.innerHTML = '';
 }
 function fadeIn(){
-    elemento.style.display = 'block';
+    elemento.style.display = 'flex';
     elemento.classList.add('anim-in');
 }
 function fadeOut(){
@@ -88,20 +88,28 @@ function carregaNotas(){
     }
     carregaCor();
 }
-
 function carregaCor(){
     if(localStorage.hasOwnProperty('cor')){
         let cor = localStorage.getItem('cor');
         document.querySelector('header').style.backgroundColor = `var(--${cor})`;
         document.querySelectorAll('.head').forEach(element => {element.style.backgroundColor = `var(--${cor})`; });
         document.querySelectorAll('.note').forEach(element => {element.style.borderColor = `var(--${cor})`; element.style.boxShadow = `0 0 4px var(--${cor})`;});
-        document.querySelectorAll('.note').forEach(element => {element.style.borderColor = `var(--${cor})`; }); 
+        document.querySelectorAll('.note').forEach(element => {element.style.borderColor = `var(--${cor})`; });
+        document.querySelector('.btn-criar button').style.color =  `var(--${cor})`;
+        document.querySelector('.btn-criar button').addEventListener('mouseenter', ()=>{document.querySelector('.btn-criar button').style.color = `var(--bg-highlight)`});
+        document.querySelector('.btn-criar button').addEventListener('mouseleave', ()=>{document.querySelector('.btn-criar button').style.color = `var(--${cor})`});
+        document.querySelector('.btn-criar button').addEventListener('mouseenter', ()=>{document.querySelector('.btn-criar button').style.backgroundColor = `var(--${cor})`});
+        document.querySelector('.btn-criar button').addEventListener('mouseleave', ()=>{document.querySelector('.btn-criar button').style.backgroundColor = `var(--bg-highlight)`});
     } else{
         
         document.querySelector('header').style.backgroundColor = `var(--ciano)`;
         document.querySelectorAll('.head').forEach(element => {element.style.backgroundColor = `var(--ciano)`; });
         document.querySelectorAll('.note').forEach(element => {element.style.borderColor = `var(--ciano)`; element.style.boxShadow = `0 0 4px var(--ciano)`;});
-        document.querySelectorAll('.note').forEach(element => {element.style.borderColor = `var(--ciano)`; }); 
+        document.querySelectorAll('.note').forEach(element => {element.style.borderColor = `var(--ciano)`; });
+        document.querySelector('.btn-criar button').style.color =  `var(--ciano)`;
+        document.querySelector('.btn-criar button').addEventListener('mouseenter', ()=>{document.querySelector('.btn-criar button').style.color = `var(--bg-highlight)`});
+        document.querySelector('.btn-criar button').addEventListener('mouseleave', ()=>{document.querySelector('.btn-criar button').style.color = `var(--ciano)`});
+        
     }
 }
 
