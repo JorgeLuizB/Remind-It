@@ -38,8 +38,8 @@ function adicionaNota(){
         }
         //falta implementar data
         let dataTemporaria = new Date();
-        let data = dataTemporaria.getDate() < 10 ? '0' + dataTemporaria.getDay() : dataTemporaria.getDate();
-        data += (dataTemporaria.getMonth() + 1) < 10 ? '/0' + (dataTemporaria.getMonth() + 1) : dataTemporaria.getMonth() + 1;
+        let data = dataTemporaria.getDate() < 10 ? '0' + dataTemporaria.getDate() : dataTemporaria.getDate();
+        data += (dataTemporaria.getMonth() + 1) < 10 ? '/0' + (dataTemporaria.getMonth() + 1) : '/' + dataTemporaria.getMonth() + 1;
         data += '/' + dataTemporaria.getFullYear().toString();
         console.log(data);
         notas.push({'titulo': titulo.value, 'descricao': descricao.value, 'dia': data});

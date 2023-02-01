@@ -409,8 +409,15 @@ main{
     .area-adicionar{
         width: 100%;
         position: static;
-        margin-top: 50px;
+        margin: 50px 15px 0 15px;
         text-align: center;
+        height: 57%;
+    }
+    .area-adicionar-descricao{
+        height: 250px;
+    }
+    .area-adicionar-descricao textarea{
+        height: 100%;
     }
     .btn-criar{
         position: static;
